@@ -33,6 +33,31 @@ var input = {
     "filterName": "space_pizza"
 };
 
+
+
+router.use("/filterPhoto2", (req, res) => {
+    client.algo("algo://deeplearning/DeepFilter/0.6.0")
+        .pipe(input)
+        .then(function(output) {
+            var myphoto = output;
+            if (output.error) return console.error("error: " + output.error);
+            console.log(output.result.savePaths[0]);
+            console.log(myphoto);
+
+            var robots = client.dir("data://.my/GAproject3");
+            // Get the file's contents
+            robots.file("elon_space_pizza1.jpg").get(function(err, data) {
+                // on success, data will be string or Buffer
+                console.log(client);
+                console.log("Received " + data.length + " bytes.");
+                fs.writeFileSync("temp/T-805.jpg", data);
+                res.sendFile(path.join(__dirname,'..','temp','T-805.jpg'));
+
+            });
+        });
+});
+
+
 router.use("/filterPhoto", (req, res) => {
     client.algo("algo://deeplearning/DeepFilter/0.6.0")
         .pipe(input)

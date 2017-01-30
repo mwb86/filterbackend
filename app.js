@@ -5,6 +5,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const fs = require('fs');
+var Algorithmia = require("algorithmia");
 
 var index = require('./routes/index');
 
@@ -17,6 +19,7 @@ mongoose.Promise = global.Promise;
 
 var app = express();
 app.use(cors());
+app.use(express.static(__dirname + '/temp'));
 
 
 // view engine setup
@@ -56,7 +59,7 @@ app.use(function(err, req, res, next) {
     // res.status(err.status || 500);
     // res.render('error');
     res.json({
-        'error': err.message
+        'Error': err.message
     });
 });
 

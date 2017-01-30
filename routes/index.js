@@ -11,9 +11,72 @@ var CommentSchema = require('../models/Comments.js');
 var Comment = mongoose.model('Comment');
 
 
+
+
+
+
+
+
+
+
+// router.use("/filterPhoto", (req, res) => {
+//     var client = Algorithmia.client("");
+//     client.algo("algo://deeplearning/DeepFilter/0.6.0")
+//         .pipe(input)
+//         .then(function(output) {
+//             var myphoto = output;
+//             if (output.error) return console.error("error: " + output.error);
+//             console.log(output.result.savePaths[0]);
+//             console.log(myphoto);
+//         }).then(function() {
+//
+//           var robots = client.dir("data://.my/GAproject3");
+//           // Get the file's contents
+//           robots.file("elon_space_pizza1.jpg").get(function(err, data) {
+//               // on success, data will be string or Buffer
+//               console.log(client);
+//               console.log("Received " + data.length + " bytes.");
+//               fs.writeFileSync("temp/T-804.jpg", data);
+//           });
+//
+//
+//
+//         });
+// });
+//
+// router.use('/getPhoto', (req, res) => {
+//     var robots = client.dir("data://.my/GAproject3");
+//     // Get the file's contents
+//     robots.file("elon_space_pizza1.jpg").get(function(err, data) {
+//         // on success, data will be string or Buffer
+//         console.log(client);
+//         console.log("Received " + data.length + " bytes.");
+//         fs.writeFileSync("temp/T-804.jpg", data);
+//     });
+// });
+//
+// router.get('/showPhoto', function(req, res) {
+//     res.sendfile(path.join(__dirname + '/show.html'));
+// });
+
+// app.get('/', function(req, res) {
+//     res.sendFile(path.join(__dirname + '/index.html'));
+// });
+
+
+
+
+
+
+
+
+
+
+
+
 //
 // Setup the various api routes
-// 
+//
 
 
 // GET home page

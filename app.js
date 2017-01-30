@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+// const fs = require('fs');
 
 var index = require('./routes/index');
 
@@ -17,6 +18,81 @@ mongoose.Promise = global.Promise;
 
 var app = express();
 app.use(cors());
+// app.use(express.static(__dirname + '/temp'));
+
+
+
+
+
+
+
+
+
+
+
+// var Algorithmia = require('Algorithmia');
+// var myphoto = {};
+//
+// var input = {
+//     "images": [
+//         "http://i.imgur.com/0M6MKwZ.jpg"
+//     ],
+//     "savePaths": [
+//         "data://mwb86/GAproject3/elon_space_pizza1.jpg"
+//     ],
+//     "filterName": "space_pizza"
+// };
+//
+//
+//
+// // app.listen(3000, () => {
+// //     console.log("listening on 3000");
+//     var client = Algorithmia.client("sim033rYcjutxq05DByz5NS6QfP1");
+//
+//     app.use("/filterPhoto", (req, res) => {
+//         client.algo("algo://deeplearning/DeepFilter/0.6.0")
+//             .pipe(input)
+//             .then(function(output) {
+//                 var myphoto = output;
+//                 if (output.error) return console.error("error: " + output.error);
+//                 console.log(output.result.savePaths[0]);
+//                 console.log(myphoto);
+//                 // var getImage = output.result.savePaths[0];
+//             });
+//     });
+//
+//     app.use('/getPhoto', (req, res) => {
+//         var robots = client.dir("data://.my/GAproject3");
+//         // Get the file's contents
+//         robots.file("elon_space_pizza1.jpg").get(function(err, data) {
+//             // on success, data will be string or Buffer
+//             console.log(client);
+//             console.log("Received " + data.length + " bytes.");
+//             fs.writeFileSync("temp/T-804.jpg", data);
+//         });
+//     });
+//
+//     app.get('/showPhoto', function(req, res) {
+//         res.sendfile(path.join(__dirname + '/show.html'));
+//     });
+//
+//     app.get('/', function(req, res) {
+//         res.sendFile(path.join(__dirname + '/index.html'));
+//     });
+
+// });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // view engine setup
@@ -56,7 +132,7 @@ app.use(function(err, req, res, next) {
     // res.status(err.status || 500);
     // res.render('error');
     res.json({
-        'error': err.message
+        'Error': err.message
     });
 });
 
